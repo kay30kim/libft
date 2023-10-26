@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:26:10 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 14:48:24 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:50:36 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	char	*tmp;
 
-	if (size == 0 || count == 0)
-		return (NULL);
 	tmp = (char *)malloc(size * count);
 	if (tmp == NULL)
 		return (NULL);

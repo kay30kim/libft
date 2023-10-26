@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:29:50 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 14:59:05 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:23:10 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,27 +48,25 @@ void	ft_init(int *i, int *j, int *k)
 	*k = 0;
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split_go(char const *s, char c, char **res)
 {
-	char	**res;
 	int		i;
 	int		j;
 	int		k;
 
-	if (!s)
-		return (NULL);
-	res = (char **)malloc(sizeof(char *) * (ft_cnt_str(s, c) + 1));
-	if (!res || !s)
-		return (NULL);
 	ft_init(&i, &j, &k);
-	while (++j < ft_cnt_str(s, c))
+	while (++j < ft_cnt_str(s, c) && ++i > -1)
 	{
-		i++;
 		while (s[i] && s[i] == c)
 			i++;
 		res[j] = (char *)malloc(sizeof(char) * (ft_len_str(&s[i], c) + 1));
 		if (!res[j])
+		{
+			while (j > 0)
+				free(res[--j]);
+			free(res);
 			return (NULL);
+		}
 		k = 0;
 		while (s[i] && s[i] != c)
 			res[j][k++] = s[i++];
@@ -77,18 +75,31 @@ char	**ft_split(char const *s, char c)
 	res[j] = 0;
 	return (res);
 }
+
+char	**ft_split(char const *s, char c)
+{
+	char	**res;
+
+	if (!s)
+		return (NULL);
+	res = (char **)malloc(sizeof(char *) * (ft_cnt_str(s, c) + 1));
+	if (!res || !s)
+		return (NULL);
+	return (ft_split_go(s, c, res));
+}
 /*
 #include <stdio.h>
 int main(void)
 {
     const char *input = "   long  space  check  ";
-    const char delimiter = ' ';
+	char *input2 = "xxxxxxxxhello!";
+    const char delimiter = 'x';
 
     char **result = ft_split(input, delimiter);
 
     if (result) {
         for (int i = 0; result[i] != NULL; i++) {
-            printf("Substring %d: %s\n", i + 1, result[i]);
+            printf("Substring %d: >%s<\n", i + 1, result[i]);
             free(result[i]); // Free each substring
         }
 
@@ -98,6 +109,20 @@ int main(void)
     }
 
     return 0;
+}
+
+void *ft_free_table(char **table)
+{
+	int i;
+
+	i = 0;
+	while(table[i])
+	{
+		free(table[i])
+		i++;
+	}
+	free(table);
+	return (NULL);
 }
 */
 /*

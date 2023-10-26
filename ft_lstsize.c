@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:36:48 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 14:53:50 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:32:55 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (size);
 }
-
+/*
 int main() {
     // Test case 1: Non-null input
     t_list *list1 = ft_lstnew("Item 1");
@@ -52,4 +52,4 @@ int main() {
     printf("Size of List 3: %d\n\n", size3);
 
     return 0;
-}
+}*/

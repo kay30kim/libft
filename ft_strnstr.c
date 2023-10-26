@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:21:37 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 16:22:24 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:45:42 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!haystack || !needle)
-		return (0);
-	if (needle[0] == 0)
+	if (!haystack)
+		return (NULL);
+	if (!needle || needle[0] == 0)
 		return ((char *)haystack);
 	i = 0;
 	while (i < len && haystack[i])

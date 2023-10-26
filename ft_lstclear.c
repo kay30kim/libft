@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:33:31 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 16:41:01 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:21:49 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,18 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
+	t_list	*head;
 
+	if (!lst)
+		return ;
+	head = *lst;
 	while (*lst && del)
 	{
 		tmp = *lst;
-		*lst = (*lst)->next;
-		del(tmp->content);
-		free(tmp);
+		head = head->next;
+		ft_lstdelone(tmp, del);
 	}
+	head = 0;
 }
 /*
 void	ft_lstprint(t_list *list)

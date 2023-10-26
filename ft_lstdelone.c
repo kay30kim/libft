@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:33:53 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 16:44:10 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:33:30 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!del || !lst)
 		return ;
-	if (lst)
-	{
-		del(lst->content);
-		free(lst);
-	}
+	del(lst->content);
+	free(lst);
 }
-
+/*
 void	ft_lstprint(t_list *list)
 {
 	while (list)
@@ -40,7 +37,10 @@ void	print_node(void *content)
 
 void	delete_string_node(void *content)
 {
+	printf("aa\n");
+	printf("%s -> \n", (char *)content);
 	content = 0;
+	printf("%s -> \n\n", (char *)content);
 }
 
 int	main(void)
@@ -58,4 +58,4 @@ int	main(void)
 
 	ft_lstprint(list1);
 	return (0);
-}
+}*/

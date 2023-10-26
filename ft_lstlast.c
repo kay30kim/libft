@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:34:48 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 16:30:45 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:15:37 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst->next;
 	return (lst);
 }
-
+/*
 int	main(void)
 {
 	t_list	*list1;
@@ -50,4 +50,4 @@ int	main(void)
 	last3 = ft_lstlast(list3);
 	printf("Last element in List 3: %s\n\n", (char *)last3->content);
 	return (0);
-}
+}*/

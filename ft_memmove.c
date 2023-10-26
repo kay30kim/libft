@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:21:18 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 14:57:56 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:43:43 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*dest;
 	char	*srcc;
 
-	if (!dst || !src || len == 0)
+	if (!dst || !src)
 		return (NULL);
 	dest = (char *)dst;
 	srcc = (char *)src;

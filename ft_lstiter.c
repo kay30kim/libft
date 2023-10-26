@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:34:31 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/25 14:55:16 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:15:30 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
-
+/*
 void print_node(void *content) {
     printf("%s -> ", (char *)content);
 }
@@ -38,4 +38,4 @@ int main() {
     printf("NULL\n");
 
     return 0;
-}
+}*/
