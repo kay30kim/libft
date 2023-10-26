@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:33:31 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/26 17:21:49 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:38:11 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	if (!lst)
 		return ;
 	head = *lst;
-	while (*lst && del)
+	while (head && del)
 	{
-		tmp = *lst;
+		tmp = head;
 		head = head->next;
 		ft_lstdelone(tmp, del);
 	}
-	head = 0;
+	*lst = 0;
 }
 /*
 void	ft_lstprint(t_list *list)
@@ -67,5 +67,6 @@ int	main(void)
 	{
 		printf("List 1 is now NULL\n");
 	}
+	ft_lstprint(list1);
 	return (0);
 }*/
