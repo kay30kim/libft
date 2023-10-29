@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:32:57 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/26 15:16:14 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/28 14:25:45 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ptr;
 
-	if (!new || !lst)
-		return ;
-	ptr = *lst;
-	while (ptr && ptr->next)
-	{
-		ptr = ptr->next;
-	}
-	if (ptr)
-		ptr->next = new;
-	else
+	if (*lst == NULL)
 		*lst = new;
+	else
+	{
+		ptr = *lst;
+		while (ptr->next)
+			ptr = ptr->next;
+		ptr->next = new;
+	}
 }
 /*
 int	main(void)

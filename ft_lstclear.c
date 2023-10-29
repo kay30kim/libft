@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:33:31 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/26 17:38:11 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/28 14:29:59 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*tmp;
 	t_list	*head;
 
-	if (!lst)
+	if (!lst || !del)
 		return ;
 	head = *lst;
-	while (head && del)
+	while (head)
 	{
 		tmp = head;
 		head = head->next;

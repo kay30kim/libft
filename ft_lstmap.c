@@ -6,7 +6,7 @@
 /*   By: kyung-ki <kyung-ki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 12:35:19 by kyung-ki          #+#    #+#             */
-/*   Updated: 2023/10/26 17:47:25 by kyung-ki         ###   ########.fr       */
+/*   Updated: 2023/10/28 14:33:21 by kyung-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,21 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (NULL);
-	head = 0;
+	head = NULL;
 	while (lst)
 	{
-		tmp = ft_lstnew(f(lst->content));
+		tmp = ft_lstnew((*f)(lst->content));
 		if (!tmp)
 		{
 			ft_lstclear(&head, del);
 			return (0);
 		}
-		if (!head)
-			head = ft_lstnew(lst->content);
-		else
-			ft_lstadd_back(&head, tmp);
+		ft_lstadd_back(&head, tmp);
 		lst = lst->next;
 	}
 	return (head);
 }
-
+/*
 void	ft_lstprint(t_list *list)
 {
 	while (list)
@@ -98,4 +95,4 @@ int main() {
     ft_lstclear(&mapped_list3, delete_string_node);
 
     return 0;
-}
+}*/
